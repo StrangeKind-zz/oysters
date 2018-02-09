@@ -1,0 +1,125 @@
+.navigation {
+  position: fixed;
+  top: 5vw;
+  left: 0;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  height: 50px;
+
+  &--hamburger {
+    position: relative;
+    display: flex;
+    width: 40px;
+    height: 22px;
+    align-items: center;
+    cursor: pointer;
+    overflow: hidden;
+
+    &:hover {
+      .navigation--hamburger__inner {
+        span {
+        transition: $transition-main transform;
+
+          &:nth-child(1) {
+            transform: translateX(40px);
+          }
+          &:nth-child(2) {
+            transform: translateX(40px);
+          }
+          &:nth-child(3) {
+            transform: translateX(40px);
+          }
+        }
+      }
+      .navigation--hamburger__outer {
+        span {
+
+          &:nth-child(1) {
+            transform: translateX(0px);
+          }
+          &:nth-child(2) {
+            transform: translateX(0px);
+          }
+          &:nth-child(3) {
+            transform: translateX(0px);
+          }
+        }
+      }
+    }
+
+    &__inner {
+      width: 40px;
+      height: 22px;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      span {
+          height: 2px;
+          display: block;
+          background: $light;
+          position: relative;
+          transition: 0s all;
+
+          &:nth-child(1) {
+            width: 30px;
+            margin-bottom: 8px;
+            transition-delay: 0.1s;
+          }
+          &:nth-child(2) {
+            width: 40px;
+            margin-bottom: 8px;
+            transition-delay: 0.2s;
+          }
+          &:nth-child(3) {
+            width: 40px;
+            transition-delay: 0.4s;
+          }
+
+      }
+    }
+    &__outer {
+      width: 40px;
+      height: 22px;
+      display: block;
+      position: relative;
+      top: 0;
+      left: 0;
+
+      span {
+          height: 2px;
+          display: block;
+          background: $light;
+          position: relative;
+          transition: $transition-main transform;
+          transform: translateX(-40px);
+
+          &:nth-child(1) {
+            width: 30px;
+            margin-bottom: 8px;
+            transition-delay: 0.1s;
+          }
+          &:nth-child(2) {
+            width: 40px;
+            margin-bottom: 8px;
+            transition-delay: 0.2s;
+          }
+          &:nth-child(3) {
+            width: 40px;
+            transition-delay: 0.5s;
+          }
+
+      }
+    }
+
+  }
+
+  &--logo {
+    position: absolute;
+    left: 50%;
+    height: 26px;
+    transform: translateX(-50%);
+  }
+}
