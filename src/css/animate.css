@@ -1223,28 +1223,11 @@
 .slideOutUp {
   animation-name: slideOutUp; }
 
-@keyframes scrollGrow {
+@keyframes menuGrow {
   from {
-    height: 0px; }
+    transform: translateX(-40px); }
   to {
-    height: 20vh; } }
+    transform: translateX(0px); } }
 
-.scrollGrow {
-  animation-name: scrollGrow; }
-
-@keyframes twistInUp {
-  from {
-    opacity: 0;
-    transform: scale(0.8) scaleZ(1) rotateX(61deg) rotateY(17deg);
-    transform-origin: 0% 0%;
-    perspective-origin: 50% 50%; }
-  to {
-    opacity: 1;
-    transform: none;
-    visibility: visible;
-    transform: scale(1) scaleZ(1) rotateX(0deg) rotateY(0deg);
-    transform-origin: 0% 0%;
-    perspective-origin: 0% 0%; } }
-
-.twistInUp {
-  animation-name: twistInUp; }
+.menuGrow {
+  animation-name: menuGrow; }
