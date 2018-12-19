@@ -1,0 +1,29 @@
+.footer {
+  height: 100vh;
+  background: #151515;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+
+  &--content {
+    align-self: center;
+    width: 100%;
+    overflow: hidden;
+
+    h1 {
+      margin-bottom: 20px;
+    }
+  }
+
+  &--links {
+    width: 100%;
+    align-self: flex-end;
+    position: absolute;
+    padding-bottom: 50px;
+
+    a {
+      margin-right: 40px;
+    }
+  }
+}

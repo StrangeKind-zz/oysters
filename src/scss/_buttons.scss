@@ -1,232 +1,166 @@
-body {
-  background-color: #181818;
-  overflow-y: scroll;
-  margin: 0;
-  overflow-x: hidden;
-  font-family: $main-font;
-}
-
-.btn--main {
-  color: $light;
-  background: none;
-  font-family: $main-font;
-  outline: none;
-  border: 0;
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  padding: 20px 50px 20px 50px;
-  overflow: hidden;
-  position: relative;
-  transition: $transition-main all;
-
-  &:hover {
-    letter-spacing: 0.28em;
+.cta {
+  &--main {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: 'sg-sans';
+    font-weight: 400;
     color: $dark;
-    transition-delay: 0.3s;
+    background: transparent;
+    padding: 0;
+    border: 0;
+    outline: none;
+    letter-spacing: 0.08em;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: all .7s cubic-bezier(.19,1,.22,1);
+    padding-bottom: 5px;
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      left: 0;
+      bottom: 0;
+      background: $dark;
+      transform: scaleX(1);
+      transition: transform .7s cubic-bezier(.19,1,.22,1);
+      transform-origin: left;
+    }
+
+    &:hover {
+
+      &:after {
+        transform: scaleX(0);
+        transform-origin: right;
+      }
+    }
+
+    &.light {
+      color: $light;
+
+      &:after {
+        background: $light;
+      }
+    }
+  }
+
+  &--menu {
+    width: 50px;
+    height: 50px;
+    background: $light;
+    border-radius: 50%;
+    border: 0;
+    outline: none;
+    z-index: 999;
+    transition: all .7s cubic-bezier(.19,1,.22,1);
+    transform: scale(0);
+    pointer-events: visible;
+
+    &.show {
+      transform: scale(1);
+    }
 
     span {
+      content: "";
       position: absolute;
-      width: 51%;
-      height: 50%;
+      display: block;
+      background: $dark;
+      width: 22px;
+      height: 2px;
+      left: 50%;
+      margin-left: -11px;
 
-      &:nth-child(1) {
-        left: 0;
-        top: 0;
-        &::before {
-          content: "";
-          position: absolute;
-          width: 100%;
-          height: 1px;
-          background: $light;
-        }
-        &::after {
-          content: "";
-          position: absolute;
-          width: 1px;
-          height: 100%;
-          background: $light;
-        }
-      }
-      &:nth-child(2) {
-        left: 0;
-        bottom: 0;
-        &::before {
-          content: "";
-          position: absolute;
-          width: 100%;
-          height: 1px;
-          background: $light;
-        }
-        &::after {
-          content: "";
-          position: absolute;
-          width: 1px;
-          height: 100%;
-          background: $light;
-        }
-      }
-      &:nth-child(3) {
-        right: 0;
-        top: 0;
-
-        &::before {
-          content: "";
-          position: absolute;
-          width: 100%;
-          height: 1px;
-          background: $light;
-        }
-        &::after {
-          content: "";
-          position: absolute;
-          width: 1px;
-          height: 100%;
-          background: $light;
-        }
-      }
-      &:nth-child(4) {
-        right: 0;
-        bottom: 0;
-        &::before {
-          content: "";
-          position: absolute;
-          width: 100%;
-          height: 1px;
-          background: $light;
-        }
-        &::after {
-          content: "";
-          position: absolute;
-          width: 1px;
-          height: 100%;
-          background: $light;
-        }
-      }
-      &:nth-child(5) {
-        transform: translateY(-30%) skewY(-10deg);
-        transition-delay: 0.3s;
+      &:before {
+        content: "";
+        position: absolute;
+        display: block;
+        background: $dark;
+        width: 22px;
+        height: 2px;
+        margin-top: -6px;
+        transition: all .7s cubic-bezier(.19,1,.22,1);
       }
 
+      &:after {
+        content: "";
+        position: absolute;
+        display: block;
+        background: $dark;
+        width: 22px;
+        height: 2px;
+        margin-top: 6px;
+        transition: all .7s cubic-bezier(.19,1,.22,1);
+      }
     }
 
+    &:hover {
+
+      span {
+
+        &:before {
+          margin-left: 3px;
+        }
+
+        &:after {
+          margin-left: -3px;
+        }
+      }
+    }
+
+    &.active {
+
+      span {
+        content: "";
+        position: absolute;
+        display: block;
+        background: $dark;
+        width: 0px;
+        height: 2px;
+        left: 50%;
+        margin-left: -11px;
+
+        &:before {
+          content: "";
+          position: absolute;
+          display: block;
+          background: $dark;
+          width: 22px;
+          height: 2px;
+          margin-top: 0px;
+          transform: rotate(45deg);
+          transition: all .7s cubic-bezier(.19,1,.22,1);
+        }
+
+        &:after {
+          content: "";
+          position: absolute;
+          display: block;
+          background: $dark;
+          width: 22px;
+          height: 2px;
+          margin-top: 0px;
+          transform: rotate(-45deg);
+          transition: all .7s cubic-bezier(.19,1,.22,1);
+        }
+      }
+
+      &:hover {
+
+        span {
+
+          &:before {
+            margin-left: 0px;
+            transform: rotate(-45deg);
+          }
+
+          &:after {
+            margin-left: 0px;
+            transform: rotate(-135deg);
+          }
+        }
+      }
+    }
   }
-
-  span {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    transition: $transition-main all;
-
-    &:nth-child(1) {
-      left: 0;
-      top: 0;
-      &::before {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 1px;
-        left: 0;
-        top: 0;
-        background: $light-100;
-        transition: $transition-main all;
-      }
-      &::after {
-        content: "";
-        position: absolute;
-        width: 1px;
-        height: 10px;
-        left: 0;
-        top: 0;
-        background: $light-100;
-        transition: $transition-main all;
-      }
-    }
-    &:nth-child(2) {
-      left: 0;
-      bottom: 0;
-      &::before {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 1px;
-        left: 0;
-        bottom: 0;
-        background: $light-100;
-        transition: $transition-main all;
-      }
-      &::after {
-        content: "";
-        position: absolute;
-        width: 1px;
-        height: 10px;
-        left: 0;
-        bottom: 0;
-        background: $light-100;
-        transition: $transition-main all;
-      }
-    }
-    &:nth-child(3) {
-      right: 0;
-      top: 0;
-      &::before {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 1px;
-        right: 0;
-        top: 0;
-        background: $light-100;
-        transition: $transition-main all;
-      }
-      &::after {
-        content: "";
-        position: absolute;
-        width: 1px;
-        height: 10px;
-        right: 0;
-        top: 0;
-        background: $light-100;
-        transition: $transition-main all;
-      }
-    }
-    &:nth-child(4) {
-      right: 0;
-      bottom: 0;
-      &::before {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 1px;
-        right: 0;
-        bottom: 0;
-        background: $light-100;
-        transition: $transition-main all;
-      }
-      &::after {
-        content: "";
-        position: absolute;
-        width: 1px;
-        height: 10px;
-        right: 0;
-        bottom: 0;
-        background: $light-100;
-        transition: $transition-main all;
-      }
-    }
-    &:nth-child(5) {
-      width: 100%;
-      height: 200%;
-      transform: translateY(80%) skewY(-10deg);
-      position: absolute;
-      background: $light;
-      top: 0;
-      left: 0;
-      transition: $transition-main all;
-      transition-delay: 0s;
-      z-index: -1;
-    }
-
-  }
-
 }

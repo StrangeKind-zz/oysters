@@ -4,14 +4,15 @@
 @import "variables";
 @import "bootstrap";
 @import "animate";
+@import "fonts";
 
 // Normalize
 @import "normalize";
 
 // Core CSS
-@import "type";
-@import "buttons";
-@import "fonts";
+@import "home";
 @import "navigation";
 @import "grid";
-@import "home";
+@import "buttons";
+@import "type";
+@import "footer";

@@ -1,5 +1,38 @@
-.grid--item {
-  padding-left: 4vw;
-  padding-right: 4vw;
-  box-sizing: border-box;
+.grid {
+
+  &--item {
+    padding: 4vw;
+    box-sizing: border-box;
+
+    &__extra-top {
+      padding: 6vw 4vw 4vw 4vw;
+      box-sizing: border-box;
+    }
+
+    &__only-top {
+      padding: 6vw 0 0 0;
+      box-sizing: border-box;
+    }
+
+    &__extra {
+      padding: 8vw 4vw 8vw 4vw;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+  }
+
+  &--menu {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    width: calc(8.33333333% + 30px);
+  }
+
+  &--fluid {
+
+    &__snap {
+      margin-top: -7vw;
+    }
+  }
 }

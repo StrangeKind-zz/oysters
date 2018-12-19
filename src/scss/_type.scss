@@ -1,51 +1,25 @@
-h1 {
-  font-family: $main-font;
-  font-size: 10.5vw;
-  line-height: 1.2;
+h1, h2, h3, h4, h5, h6, p {
+  font-family: 'sg-sans';
   color: $light;
-  margin: 0;
+  letter-spacing: 0.02em;
+  line-height: $line-height;
+}
 
-  span {
-    display: inline-block;
-  }
+h1 {
+  font-size: 33px;
+  line-height: 42px;
+  font-weight: 400;
+}
 
-  @media (min-width: 576px) {
-    font-size: 8vw;
-  }
-  @media (min-width: 768px) {
-    font-size: 7vw;
-  }
-  @media (min-width: 992px) {
-    font-size: 5vw;
-  }
-  @media (min-width: 1200px) {
-    font-size: 4.6vw;
-  }
+h2 {
+  font-size: 26px;
+  line-height: 44px;
+  font-weight: 100;
+  color: $dark;
 }
 
 p {
-  font-family: $main-font;
-  font-size: 4.3vw;
-  line-height: 1.4;
-  color: $light;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  margin: 40px 0px 50px 0px;
-
-  span {
-    display: inline-block;
-  }
-
-  @media (min-width: 576px) {
-    font-size: 3vw;
-  }
-  @media (min-width: 768px) {
-    font-size: 2.3vw;
-  }
-  @media (min-width: 992px) {
-    font-size: 1.8vw;
-  }
-  @media (min-width: 1200px) {
-    font-size: 1.5vw;
-  }
+  font-size: 18px;
+  line-height: 32px;
+  font-weight: 100;
 }
